@@ -1,3 +1,5 @@
+
+
 /* In this repo your job is to write functions to make each function call work properly.
 Below is a sample problem 
 
@@ -22,9 +24,14 @@ and what you should write is the favNum function that makes the code above work,
     
 */
 
-
+Problem #1
 
   //Code Here for first
+
+var first = function(arr, callback) {
+  callback(arr[0]);          
+};
+
   
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 first(names, function(firstName){
@@ -32,13 +39,18 @@ first(names, function(firstName){
 });
 
 
+------------------------------------------------------------------------------------------
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
-
-
+Problem #2
 
   //Code Here for last
+
+var last = function(arr, callback) {
+  callback(arr[0]);
+};
+
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 last(names, function(lastName){
@@ -46,33 +58,44 @@ last(names, function(lastName){
 });
 
 
-
-
+------------------------------------------------------------------------------------------
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
-
-
-
-
+Problem #3
 
   //Code Here for multiply
+
+var multiply = function(numOne, numTwo, callback) {
+  callback(numOne * numTwo);
+}
 
 multiply(4, 3, function(answer){
   console.log('The answer is ', answer); //should console.log 12
 })
 
 
-
+------------------------------------------------------------------------------------------
 
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
-
-
-
+Problem #4
 
   //Code Here for contains
+
+debugger;
+var contains = function(arr, str, callback) {
+  for (var i = 0; i < arr.length; i++); {
+    if (arr[i] === str) {                         <--- NEED HELP
+      callback(true);
+    }
+    else {
+      callback(false);
+    }
+  }
+};
+
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 contains(names, 'Colt', function(result){
@@ -84,15 +107,25 @@ contains(names, 'Colt', function(result){
 });
 
 
-
+------------------------------------------------------------------------------------------
 
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
-
-
+Problem #5
 
     //Code Here for uniq
+
+var uniq = function(arr, callback) {
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] === arr[i]) {
+      arr[i].splice(i, 1);            <--NEED HELP
+    }
+  }
+  callback(arr);
+};
+
+
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 uniq(names, function(uniqArr){
@@ -100,15 +133,22 @@ uniq(names, function(uniqArr){
 });
 
 
-
+------------------------------------------------------------------------------------------
 
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
-
-
+Problem #6
 
     //Code Here for each
+
+var each = function(arr, callback) {
+  var itemNum = 0
+  for (var i = 0; i < arr.length; i++) {
+      console.log(i);                     //<-- this is close
+    }                                     //returns 'The item in the 0 position is Tyler'
+  callback(arr[0], itemNum);
+};
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 each(names, function(item, indice){
@@ -117,15 +157,35 @@ each(names, function(item, indice){
 
 
 
-
+------------------------------------------------------------------------------------------
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
+Problem #7
 
+//code here for getUserById
 
+var getUserById = function(obj, str, callback) {
+  for (var key in obj) {
+    if (key.id === str) {
+      callback(key.email, key.name);
+    }
+  }
+};
 
+                                                                /*
 
- //code here for getUserById
+var getUserById = function(arr, str, callback) {
+  var user;
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i].id === str) {
+    user = arr[i];
+    callback(user);
+    }
+  }
+};
+
+                                                                */
 
 var users = [
   {
